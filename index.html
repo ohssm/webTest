@@ -1,130 +1,166 @@
-<!DOCTYPE html>  
-<html lang="ko">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <!-- Tailwind CSS 학습이나 간단한 테스트를 위해서는 CDN 방식 -->   
-    <title>나의 첫 웹페이지</title>  
-    <script src="https://cdn.tailwindcss.com"></script>  
-    <!--   
-        모던한 디자인 개선사항:  
-        - Tailwind CSS를 활용한 반응형 디자인  
-        - 부드러운 그림자 효과와 둥근 모서리  
-        - 깔끔한 여백과 정렬  
-    -->  
-    <style>  
-        /*   
-            타이포그래피 개선사항:  
-            - Noto Sans KR 폰트 적용  
-            - 적절한 글자 크기와 간격  
-        */  
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');  
-        
-        body {  
-            font-family: 'Noto Sans KR', sans-serif;  
-            background-color: #f8f9fa;  
-        }  
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white fixed w-full z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="text-2xl font-bold">Modern Fashion</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-black">홈</a>
+                    <a href="#" class="text-gray-700 hover:text-black">스토리</a>
+                    <a href="#" class="text-gray-700 hover:text-black">제품</a>
+                    <a href="#" class="text-gray-700 hover:text-black">FAQ</a>
+                    <a href="#" class="text-gray-700 hover:text-black">연락처</a>
+                </div>
 
-        /*   
-            상호작용 요소 개선사항:  
-            - 링크에 호버 효과 추가  
-            - 단락에 호버 시 배경색 변화  
-            - 이미지 호버 시 약간 확대되는 효과  
-        */  
-        .link-hover {  
-            transition: all 0.3s ease;  
-        }  
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-        .link-hover:hover {  
-            transform: translateY(-2px);  
-            color: #007bff;  
-        }  
+    <!-- Hero Section -->
+    <section class="relative h-screen">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <img src="/api/placeholder/1920/1080" alt="Hero Image" class="w-full h-full object-cover"/>
+        <div class="absolute inset-0 flex items-center justify-center text-center">
+            <div class="text-white px-4">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4">Modern Fashion Style</h1>
+                <p class="text-xl md:text-2xl mb-8">새로운 스타일로 당신만의 이야기를 만들어보세요</p>
+                <a href="#" class="bg-white text-black px-8 py-3 rounded-full hover:bg-gray-100 transition">컬렉션 보기</a>
+            </div>
+        </div>
+    </section>
 
-        .image-container {  
-            transition: all 0.3s ease;  
-        }  
+    <!-- Featured Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Collections</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/300" alt="Collection 1" class="w-full h-64 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Summer Collection</h3>
+                        <p class="text-gray-600 mb-4">시원하고 스타일리시한 여름 컬렉션을 만나보세요.</p>
+                        <a href="#" class="text-black font-medium hover:underline">자세히 보기 →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/300" alt="Collection 2" class="w-full h-64 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Autumn Styles</h3>
+                        <p class="text-gray-600 mb-4">가을의 분위기를 담은 특별한 스타일링.</p>
+                        <a href="#" class="text-black font-medium hover:underline">자세히 보기 →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/300" alt="Collection 3" class="w-full h-64 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Winter Special</h3>
+                        <p class="text-gray-600 mb-4">따뜻하고 세련된 겨울 스페셜 컬렉션.</p>
+                        <a href="#" class="text-black font-medium hover:underline">자세히 보기 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        .image-container:hover {  
-            transform: scale(1.02);  
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
-        }  
-    </style>  
-</head>  
-<body class="min-h-screen">  
-    <div class="container mx-auto px-4 py-8">  
-        <!--   
-            구조화 개선사항:  
-            - 콘텐츠를 섹션별로 구분  
-            - 카드 형태의 디자인으로 정보 구분  
-        -->  
-        
-        <!-- 헤더 섹션 -->  
-        <header class="text-center mb-12">  
-            <h1 class="text-4xl font-bold text-blue-600 mb-4 animate-fade-in">  
-                나의 첫번째 웹 페이지  
-            </h1>  
-            <h4 class="text-xl text-gray-600 font-medium">  
-                HTML의 기본 내용을 실습해 봅니다.  
-            </h4>  
-        </header>  
+    <!-- About Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="/api/placeholder/600/400" alt="About Us" class="rounded-lg shadow-lg"/>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-6">
+                        Modern Fashion은 2024년부터 혁신적인 패션을 선보이며 많은 사랑을 받아왔습니다.
+                        우리는 지속 가능한 패션을 추구하며, 높은 품질과 독특한 디자인으로 
+                        고객들에게 특별한 가치를 전달하고 있습니다.
+                    </p>
+                    <a href="#" class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition inline-block">
+                        더 알아보기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!--   
-            색상 개선사항:  
-            - 부드러운 색상 팔레트 사용  
-            - 기존의 검은 배경은 유지하되 더 세련되게 개선  
-        -->  
-        
-        <!-- 단락 섹션 1 -->  
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">  
-            <div class="space-y-4">  
-                <p class="bg-gray-900 text-white p-4 rounded-md transition-all hover:bg-gray-800">단락1</p>  
-                <p class="bg-gray-900 text-white p-4 rounded-md transition-all hover:bg-gray-800">단락2</p>  
-                <p class="bg-gray-900 text-red-600 p-4 rounded-md transition-all hover:bg-gray-800">단락3</p>  
-            </div>  
-        </div>  
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">뉴스레터 구독</h2>
+            <p class="mb-8">최신 컬렉션과 특별한 할인 소식을 받아보세요</p>
+            <form class="max-w-md mx-auto">
+                <div class="flex gap-4">
+                    <input type="email" placeholder="이메일 주소" 
+                           class="flex-1 px-4 py-3 rounded-full text-black"/>
+                    <button type="submit" 
+                            class="bg-white text-black px-8 py-3 rounded-full hover:bg-gray-100 transition">
+                        구독하기
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
 
-        <!-- 단락 섹션 2 -->  
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">  
-            <div class="space-y-4">  
-                <p class="bg-gray-900 text-white p-4 rounded-md transition-all hover:bg-gray-800">단락1</p>  
-                <p class="bg-gray-900 text-white p-4 rounded-md transition-all hover:bg-gray-800">단락2</p>  
-                <p class="bg-gray-900 text-red-600 p-4 rounded-md transition-all hover:bg-gray-800">단락3</p>  
-            </div>  
-        </div>  
-
-        <!--   
-            상호작용 요소가 적용된 링크 섹션:  
-            - 호버 효과  
-            - 아이콘 추가  
-            - 부드러운 전환 효과  
-        -->  
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">  
-            <div class="flex flex-col space-y-4">  
-                <a href="https://www.naver.com/" class="link-hover text-lg text-gray-700 flex items-center">  
-                    <span class="mr-2">🔗</span> Naver  
-                </a>  
-                <a href="https://www.google.com/" class="link-hover text-lg text-gray-700 flex items-center">  
-                    <span class="mr-2">🔗</span> Google  
-                </a>  
-                <a href="https://openai.com/chatgpt/" target="_blank" class="link-hover text-lg text-gray-700 flex items-center">  
-                    <span class="mr-2">🔗</span> ChatGPT  
-                </a>  
-            </div>  
-        </div>  
-
-        <!--   
-            이미지 섹션 개선사항:  
-            - 반응형 이미지 크기  
-            - 호버 효과  
-            - 그림자 효과  
-        -->  
-        <div class="bg-white rounded-lg shadow-lg p-6">  
-            <div class="image-container">  
-                <img src="후드티_모자뒤집어쓰고_오예_c398da.jpeg" alt="test" class="w-full max-w-md mx-auto rounded-lg shadow-md mb-4">  
-                <p class="text-center text-gray-600 mb-4">사진: charlesdeluvio</p>  
-                <p class="bg-gray-900 text-white p-4 rounded-md text-center">이미지의 p태그</p>  
-            </div>  
-        </div>  
-    </div>  
-</body>  
-</html>  
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Modern Fashion</h3>
+                    <p class="text-gray-600">
+                        최고의 품질과 스타일을 제공하는 패션 브랜드
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-black">홈</a></li>
+                        <li><a href="#" class="hover:text-black">스토리</a></li>
+                        <li><a href="#" class="hover:text-black">제품</a></li>
+                        <li><a href="#" class="hover:text-black">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">고객 지원</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-black">배송 안내</a></li>
+                        <li><a href="#" class="hover:text-black">반품/교환</a></li>
+                        <li><a href="#" class="hover:text-black">자주 묻는 질문</a></li>
+                        <li><a href="#" class="hover:text-black">문의하기</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">연락처</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>서울특별시 강남구</li>
+                        <li>전화: 02-1234-5678</li>
+                        <li>이메일: info@modernfashion.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+                <p>&copy; 2024 Modern Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
